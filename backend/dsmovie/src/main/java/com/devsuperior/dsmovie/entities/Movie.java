@@ -1,11 +1,15 @@
 package com.devsuperior.dsmovie.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 //hibernate = implementacao
 //persistence = especificacao
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +23,13 @@ public class Movie {
 	private Double score;
 	private Integer count;
 	private String image;
+	
+	//coloca o Set nao o List, para garantir que nao ira repetir dados
+	//Mapear a lista no modelo de dados
+	@OneToMany(mappedBy = "id.movie")
+	private Set<Score> scores = new HashSet<>();
+	
+	
 
 	// instanciar um movie, sem passar valor
 	public Movie() {
@@ -73,4 +84,7 @@ public class Movie {
 		this.image = image;
 	}
 
+	public Set<Score> getScores() {
+		return scores;
+	}
 }
