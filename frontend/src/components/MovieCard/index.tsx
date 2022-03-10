@@ -13,6 +13,15 @@ function MovieCard() {
         
     };
 
+    const movie2 = {
+        id: 2,
+        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/vIgyYkXkg6NC2whRbYjBD7eb3Er.jpg",
+        title: "Venom: Tempo de Carnificina",
+        count: 3,
+        score: 5
+        
+    };
+
     return (
         <div>
             <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
@@ -24,7 +33,19 @@ function MovieCard() {
                     <div className="btn btn-primary dsmovie-btn">Avaliar</div>
                 </Link>
             </div>
+
+            <img className="dsmovie-movie-card-image" src={movie.image} alt={movie2.title} />
+            <div className="dsmovie-card-bottom-container">
+                <h3>{movie.title}</h3>
+                <MovieScore />
+
+                <Link to={`/form/${movie2.id}`}>
+                    <div className="btn btn-primary dsmovie-btn">Avaliar</div>
+                </Link>
+            </div>
         </div>
+
+        
 
     );
 }
