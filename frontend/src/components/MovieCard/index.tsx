@@ -32,7 +32,7 @@ function MovieCard() {
                 <Link to={`/form/${movie.id}`}>
                     <div className="btn btn-primary dsmovie-btn">Avaliar</div>
                 </Link>
-            </div>
+           
 
             <img className="dsmovie-movie-card-image" src={movie.image} alt={movie2.title} />
             <div className="dsmovie-card-bottom-container">
@@ -42,6 +42,7 @@ function MovieCard() {
                 <Link to={`/form/${movie2.id}`}>
                     <div className="btn btn-primary dsmovie-btn">Avaliar</div>
                 </Link>
+            </div>
             </div>
         </div>
 
