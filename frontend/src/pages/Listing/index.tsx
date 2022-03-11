@@ -14,6 +14,7 @@ function Listing() {
     //fazendo requisição com useState
     const [pageNumber, setPageNumber] = useState(0);
 
+    //page = volta o estado da requisicao do backend
     //estado = guardar no componente a pagina que foi carregada
     const [page, setPage] = useState<MoviePage>({
         content: [],
@@ -29,7 +30,7 @@ function Listing() {
 
     //quando mudar a página, ele faz a requisição novamente
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies?size=12page=${pageNumber}&sort=title`)
+        axios.get(`${BASE_URL}/movies?size=12page=${pageNumber}`)
             .then(response => {
                 const data = response.data as MoviePage;
                 setPage(data);
@@ -44,11 +45,15 @@ function Listing() {
     //    console.log(response.data)
     //   })
 
+    //mudar a pagina
+    const handlePageChange = (newPageNumber : number)  => {
+        setPageNumber(newPageNumber);
+    }
 
-//renderização dinamica
+    //renderização dinamica
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlePageChange} />
             <div className="container">
                 <div className="row">
                     {page.content.map(movie => (
