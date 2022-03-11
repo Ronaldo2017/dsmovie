@@ -9,7 +9,7 @@ function Navbar(){
          <a href="https://github.com/Ronaldo2017/dsmovie">
             <div className='dsmovie-contact-container'>
               <GitHubIcon/>
-                <p className='dsmovie-contact-link'>/Ronaldo Luis da Costa</p>              
+                <p className='dsmovie-contact-link'>/ Ronaldo Luis da Costa</p>              
             </div>
          </a>
        </div>
