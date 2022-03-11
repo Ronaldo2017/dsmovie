@@ -21,7 +21,8 @@ header{
 .dsmovie-contact-container{
     display: flex;
     align-items: center;
-    color: #fff;
+    color: #fff;    
+    text-decoration: none;
 }
 
 .dsmovie-contact-link{
