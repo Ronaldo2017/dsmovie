@@ -5,7 +5,7 @@ function Navbar(){
     <header>
      <nav className="container">
        <div className='dsmovie-nav-content'>
-         <h1>DSMovie</h1>
+         <h1>Avaliação dos Filmes</h1>
          <a href="https://github.com/Ronaldo2017/dsmovie">
             <div className='dsmovie-contact-container'>
               <GitHubIcon/>
